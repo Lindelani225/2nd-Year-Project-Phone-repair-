@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <title>Shadrak's Repair</title>
+
+    <link href="~/Content/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+    <header id="header" class="fixed-top header-inner-pages">
+        <div class="container-fluid">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-9 d-flex align-items-center justify-content-between">
+                    <a href="#" class="logo"><img src="~/Content/assets/img/logo.png" alt="" class="img-fluid"></a>
+                    <h1 class="logo"><a href="#">Shadrak's Repair</a></h1>
+
+
+
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="drop-down">
+                                <a href="">Services</a>
+                                <ul>
+
+
+
+                                    <li class="drop-down">
+                                        <a href="#">Device to Fix</a>
+                                        <ul>
+                                            <li>@Html.ActionLink("Request Pick-Up", "Index", "Cust_Request")</li>
+                                            <li>@Html.ActionLink("Book WalkIn Appoint", "Index", "Cust_WalkIn")</li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            <li>@Html.ActionLink("About", "Index", "Cust_Request")</li>
+                            <li>@Html.ActionLink("Contact", "Index", "Cust_Request")</li>
+                        </ul>
+
+
+                    </nav>
+                    <span style="font-size:17px;color:white"> Hello @ViewBag.userTech</span>
+
+                    @Html.ActionLink("Log out", "Index", "Home", "1", htmlAttributes: new { @class = "get-started-btn scrollto" })
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main id="main">
+
+
+        <section id="services" class="services" style="background-color:beige">
+            <div class="container">
+                <center>
+                    <div style="margin-top:50px;margin-bottom:50px">
+                        <h2><b><i>TECHNICIAN DASHBOARD</i></b></h2>
+                    </div>
+                </center>
+               
+
+               
+                <hr />
+
+
+                <div class="section-title" style="margin:50px">
+                    <h3>DEVICE TO FIX.</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box" style="background-color:white">
+                            <div class="icon"><i class="bx  icofont-meetup"></i></div>
+                            <h4><b><a>&rArr;</a>  @Html.ActionLink("DEVICE ON QUERE REQUEST", "Index", "Cust_WalkIn")</b></h4>
+                            <p>-Add moden device to the system that can be fixed in this Company</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="icon-box" style="background-color:black">
+                            <div class="icon"><i class="bx bxl-product-hunt"></i></div>
+                            <h4><b><a>&rArr;</a> @Html.ActionLink("CUSTOMER REQUESTED DEVICE PICK-UP", "Index", "Cust_Request")</b></h4>
+                            <p style="color:white">-Add Color of the Divice </p>
+                        </div>
+                    </div>
+
+                  
+
+                </div>
+            </div>
+
+
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+
+
+
+            </div>
+        </section>
+        <section id="clients" class="clients">
+            <div class="container">
+
+
+
+            </div>
+        </section>
+        <section id="counts" class="counts">
+            <div class="container">
+
+                <div class="text-center title">
+                    <h3>What we have achieved so far</h3>
+                    <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+                </div>
+
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">232</span>
+                        <p>Clients</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">521</span>
+                        <p>Projects</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">1,463</span>
+                        <p>Hours Of Support</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">15</span>
+                        <p>Hard Workers</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+
+    <script src="~/Content/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="~/Content/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/Content/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/Content/assets/vendor/counterup/counterup.min.js"></script>
+    <script src="~/Content/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/Content/assets/vendor/venobox/venobox.min.js"></script>
+    <script src="~/Content/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+
+    <script src="~/Content/assets/js/main.js"></script>
+
+</body>
+
+</html>

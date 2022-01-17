@@ -1,0 +1,191 @@
+﻿@model PhoneR_System.Models.Cust_WalkIn
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+
+    <!DOCTYPE html>
+    <html lang="en">
+    @Html.AntiForgeryToken()
+
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+        <meta content="" name="descriptison">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+        <link href="~/Content/assets/img/favicon.png" rel="icon">
+        <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="~/Content/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="~/Content/assets/vendor/venobox/venobox.css" rel="stylesheet">
+        <link href="~/Content/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <link href="~/Content/assets/css/style.css" rel="stylesheet">
+
+
+
+
+    </head>
+    <body>
+        <header id="header" class="fixed-top header-inner-pages">
+            <div class="container-fluid">
+                <div>
+                    <div class="col-xl-9 d-flex align-items-center justify-content-between">
+                        <a href="#" class="logo"><img src="~/Content/assets/img/logo.png" alt="" class="img-fluid"></a>
+                        <h1 class="logo"><a href="#">Shadrak's Repair</a></h1>
+
+                        <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+                        <nav class="nav-menu d-none d-lg-block">
+                            <ul>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li class="drop-down">
+                                    <a href="">Services</a>
+                                    <ul>
+                                        <li>@Html.ActionLink("Request Pick-Up Device", "Index", "Cust_Request")</li>
+                                        <li>@Html.ActionLink("Book of Walk-In Appointment", "Index", "Cust_WalkIn")</li>
+
+                                    </ul>
+                                </li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                            </ul>
+                        </nav><!-- .nav-menu -->
+
+                        @Html.ActionLink("Log out", "Index", "Home","1", htmlAttributes: new { @class = "get-started-btn scrollto" })
+                    </div>
+                </div>
+
+            </div>
+
+        </header><!-- End Header -->
+
+
+
+
+
+        <div class="form-horizontal" style="margin-top:7.5em">
+
+            <h4><b>Customer Request WalkIn or Appointment</b></h4>
+            <hr />
+
+            <h2><b>Edit Request</b></h2>
+            <hr />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Walk_Id)
+
+            <div class="form-group">
+               
+            <div class="form-group">
+                @Html.LabelFor(model => model.Walkin_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Walkin_Date, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Walkin_Date, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Walkin_Time, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Walkin_Time, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Walkin_Time, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Brand_ID, "Brand Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Brand_ID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Brand_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Problem_ID, "Problem Description", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Problem_ID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Problem_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Storg_ID, "Storage", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Storg_ID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Storg_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OS_Id, "Operating System", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("OS_Id", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.OS_Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Col_ID, "Color", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Col_ID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Col_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IMEI_Num, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IMEI_Num, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IMEI_Num, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.B_Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.B_Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.B_Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Cust_WalkIn", htmlAttributes: new { @style = "color=green" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+

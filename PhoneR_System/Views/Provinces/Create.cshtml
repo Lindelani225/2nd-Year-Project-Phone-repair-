@@ -1,0 +1,137 @@
+﻿@model PhoneR_System.Models.Province
+
+@{
+    ViewBag.Title = "Create";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <title>Shadrak's Repair</title>
+
+    <link href="~/Content/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+    <header id="header" class="fixed-top header-inner-pages">
+        <div class="container-fluid">
+
+            <div class="row justify-content-center">
+                <div class="col-xl-9 d-flex align-items-center justify-content-between">
+                    <a href="#" class="logo"><img src="~/Content/assets/img/logo.png" alt="" class="img-fluid"></a>
+                    <h1 class="logo"><a href="#">Shadrak's Repair</a></h1>
+
+
+
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="drop-down">
+                                <a href="">Services</a>
+                                <ul>
+
+                                    <li class="drop-down">
+                                        <a href="#">Manage customer</a>
+                                        <ul>
+
+                                            <li>@Html.ActionLink("Add New Device", "Index", "Devices")</li>
+                                            <li>@Html.ActionLink("New Color", "Index", "Colors")</li>
+                                            <li>@Html.ActionLink("Storage for Device", "Index", "storages")</li>
+                                            <li>@Html.ActionLink("Problem Description", "Index", "ProblemDescs")</li>
+                                            <li>@Html.ActionLink("Edit Provices", "Index", "Cust_WalkIn")</li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="drop-down">
+                                        <a href="#">Customer Related Data</a>
+                                        <ul>
+                                            <li>@Html.ActionLink("Request Pick-Up", "Index", "Cust_Request")</li>
+                                            <li>@Html.ActionLink("Book WalkIn Appoint", "Index", "Cust_WalkIn")</li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop-down">
+                                        <a href="#">Technician Data</a>
+                                        <ul>
+                                            <li>@Html.ActionLink("Stock to order", "Index", "Cust_Request")</li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            <li>@Html.ActionLink("Add Employee", "Index", "Empl_RegisterModel")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                        </ul>
+                    </nav>
+
+                    @Html.ActionLink("Log out", "Index", "Home","1", htmlAttributes: new { @class = "get-started-btn scrollto" })
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="form-horizontal" style="margin-top:7.5em">
+        <h2>Create</h2>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Province</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Province1, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Province1, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Province1, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Del_Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Del_Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Del_Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="New Province" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index","Provinces",htmlAttributes:new { @style="color:green"})
+        </div>
+        </div>
+    </body>
+</html>

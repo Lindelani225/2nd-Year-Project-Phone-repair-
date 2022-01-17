@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/Content/assets/img/favicon.png" rel="icon">
+    <link href="~/Content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/Content/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="~/Content/assets/css/style.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+    <header id="header" class="fixed-top header-inner-pages">
+        <div class="container-fluid">
+            <div>
+                <div class="col-xl-9 d-flex align-items-center justify-content-between">
+                    <a href="#" class="logo"><img src="~/Content/assets/img/logo.png" alt="" class="img-fluid"></a>
+                    <h1 class="logo"><a href="#">Shadrak's Repair</a></h1>
+
+                    <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                           
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                        </ul>
+                    </nav><!-- .nav-menu -->
+                    <span style="font-size:17px;color:white"> Hello @ViewBag.user</span>
+
+                    @Html.ActionLink("Log out", "Index", "Home", "1", htmlAttributes: new { @class = "get-started-btn scrollto" })
+
+
+                </div>
+        </div>
+
+        </div>
+
+    </header><!-- End Header -->
+
+
+    <main id="main">
+
+
+        <section id="services" class="services" style="background-color:beige">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2 style="margin:50px"><b><i>HELLCOME CUSTOMER</i></b></h2>
+
+                    <hr />
+                </div>
+                <div class="section-title">
+                    <h2>1.Services</h2>
+                    <p>Make a Device pick-up if you want us to fetch device from your home, or book a walk-in appointment with a technician
+                   </p>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+
+                        <div class="icon-box">
+                            <div class="client-logo">
+                                <img src="~/Content/assets/img/clients/bg-title-02.jpg" class="img-fluid" alt="">
+                                <h4><b><a>&rArr;</a>@Html.ActionLink("Request Pick-Up Device", "Create", "Cust_Request")</b></h4>
+                                <p style="color:black">-Your divice can be fixed within comfort of your home</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <div class="client-logo">
+                                <img src="~/Content/assets/img/clients/bg-title-01.jpg" class="img-fluid" alt="">
+
+                                <h4><b><a>&rArr;</a>@Html.ActionLink("Book of Walk-In Appointment", "Create", "Cust_WalkIn")</b></h4>
+                                <p>-Meet up with one of owner Technician to discuss your device issue</p>
+                            </div>
+                        </div>
+                    </div>
+                  
+
+
+                </div>
+
+            </div>
+
+        </section>
+        <section id="counts" class="counts">
+            <div class="container">
+
+                <div class="text-center title">
+                    <h3>What we have achieved so far</h3>
+
+                </div>
+
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">232</span>
+                        <p>Clients</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">521</span>
+                        <p>Projects</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">1,463</span>
+                        <p>Hours Of Support</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">15</span>
+                        <p>Hard Workers</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
